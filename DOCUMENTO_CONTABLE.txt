@@ -1,1 +1,0 @@
-ID: 1Nombre: nombre 2Fecha: Tue Apr 09 10:20:56 CEST 2019Tipo Documento: DOCUMENTO_CONTABLEUsuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]

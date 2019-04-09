@@ -13,18 +13,18 @@ public class EadminApplication {
 
 	private static Logger logger = LogManager.getLogger(EadminApplication.class);
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) throws Exception {		
 		logger.info("iniciando aplicacion");
 		
-		Documento documento1 = new Documento(1, "dfasdf", null, null, TipoDocumento.DOCUMENTO_CONTABLE);
-		Documento documento2 = new Documento(2, "holaxd", null, null, TipoDocumento.DOCUMENTO_CONTABLE);
-		ToPdf pdf = new ToPdf();
-		
+		Documento documento1 = new Documento(1, "documento1", null, null, TipoDocumento.DOCUMENTO_CONTABLE);
+		ToPdf pdf = new ToPdf();		
 		pdf.writePDF(documento1);
-		pdf.writePDF(documento2);
-		SpringApplication.run(EadminApplication.class, args);
-		logger.info("finalizando servicios");
+		GenerateQRCode.generarCodigoQR(documento1);
 		
+		
+		SpringApplication.run(EadminApplication.class, args);
+		
+		logger.info("finalizando servicios");		
 		pdf.logPDF();
 		
 		

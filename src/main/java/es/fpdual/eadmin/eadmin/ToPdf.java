@@ -8,6 +8,8 @@ import java.io.IOException;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -15,10 +17,12 @@ import es.fpdual.eadmin.eadmin.modelo.Documento;
 
 public class ToPdf {
 
-	public void writePDF(Documento documento) {
+	public void writePDF(Documento documento) throws Exception {
 
 		try {
 			Document document = new Document();
+			GenerateQRCode.generarCodigoQR(documento);
+			Image imagen = Image.getInstance(documento.getNombre() + ".png");
 
 			PdfWriter.getInstance(document, new FileOutputStream(documento.getNombre() + ".pdf"));
 
@@ -31,7 +35,7 @@ public class ToPdf {
 							+ documento.getTipoDocumento() + "\n****************************************************");
 
 			document.add(paragraphContent);
-
+			document.add(imagen);		
 			document.close();
 
 		} catch (FileNotFoundException | DocumentException e) {
@@ -59,8 +63,7 @@ public class ToPdf {
 				e.printStackTrace();
 			}
 
-			document.add(paragraphContent);
-
+			document.add(paragraphContent);			
 			document.close();
 
 		} catch (FileNotFoundException | DocumentException e) {
