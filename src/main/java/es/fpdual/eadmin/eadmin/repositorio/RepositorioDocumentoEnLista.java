@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.File;
-
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -15,7 +16,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Repository;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import es.fpdual.eadmin.eadmin.EadminApplication;
+import es.fpdual.eadmin.eadmin.ToPdf;
 import es.fpdual.eadmin.eadmin.modelo.AdministracionElectronicaException;
 import es.fpdual.eadmin.eadmin.modelo.Documento;
 
@@ -58,13 +68,12 @@ public class RepositorioDocumentoEnLista implements RepositorioDocumento {
 	        	
 	        	impFichero.close();
 	        	logger.info("Documento creado correctamente");
-	        	
+	        	ToPdf pdf = new ToPdf();
+	        	pdf.writePDF(documento);
 	        	
 			} else {
 				logger.info("El documento ya existe");
-			}
-    		
-        		
+			}        		
     	} catch(IOException e){
     		e.printStackTrace();
     	}
@@ -90,23 +99,20 @@ public class RepositorioDocumentoEnLista implements RepositorioDocumento {
 		//solucion 2
 		//documentos.stream()
 		//	.filter(d -> d.getId()==codigoDocumento)
-		//	.findAny().orElse(null);
-		
+		//	.findAny().orElse(null);		
 		
 		if(indice >= 0) {
 			documentos.remove(indice);
 		}
-		
-		
 	}
+	
+	
 
 	@Override
-	public List<Documento> obtenerTodosDocumentos() {
-		
+	public List<Documento> obtenerTodosDocumentos() {		
 			
 		String rutaArchivo = ("ListaDocumento.txt");		
-		try {		
-			
+		try {			
 			FileWriter fichero = new FileWriter(rutaArchivo);
 	        PrintWriter impFichero = new PrintWriter(fichero);
 	        
@@ -116,8 +122,7 @@ public class RepositorioDocumentoEnLista implements RepositorioDocumento {
 				impFichero.println("Fecha: " + documento.getFecha());
 				impFichero.println("Tipo Documento: " + documento.getTipoDocumento());
 				impFichero.println("Usuario: " + documento.getUsuario());	        	        	
-			}
-			
+			}			
         	impFichero.close();
         		
     	} catch(IOException e){
@@ -125,6 +130,7 @@ public class RepositorioDocumentoEnLista implements RepositorioDocumento {
     	}
 		return this.documentos.stream().collect(Collectors.toList());	
 	}
+	
 
 	@Override
 	public int getSiguiente() {

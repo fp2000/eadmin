@@ -1,20 +1,5 @@
 ID: 1
 Nombre: nombre 2
-Fecha: Thu Apr 04 12:21:24 CEST 2019
-Tipo Documento: DOCUMENTO_CONTABLE
-Usuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]
-ID: 2
-Nombre: nombre 2
-Fecha: Thu Apr 04 12:21:26 CEST 2019
-Tipo Documento: DOCUMENTO_CONTABLE
-Usuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]
-ID: 3
-Nombre: nombre 2
-Fecha: Thu Apr 04 12:21:27 CEST 2019
-Tipo Documento: DOCUMENTO_CONTABLE
-Usuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]
-ID: 4
-Nombre: nombre 2
-Fecha: Thu Apr 04 12:21:27 CEST 2019
+Fecha: Tue Apr 09 10:33:15 CEST 2019
 Tipo Documento: DOCUMENTO_CONTABLE
 Usuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]

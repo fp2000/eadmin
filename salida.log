@@ -1,21 +1,45 @@
-2019-04-04 11:07:19,651 INFO  EadminApplication:18 - iniciando aplicacion
-2019-04-04 11:07:19,651 TRACE EadminApplication:21 - documentoContable creado correctamente
-2019-04-04 11:07:22,462 INFO  EadminApplication:23 - finalizando servicios
-2019-04-04 11:07:35,086 DEBUG EadminApplication:49 - 
+2019-04-09 09:43:35,957 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 09:43:38,461 INFO  EadminApplication:22 - finalizando servicios
+2019-04-09 10:19:26,945 DEBUG EadminApplication:59 - 
 ****************************************************
  documento creado correctamente
  id: 1
  Nombre: nombre 2
  Usuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]
- fecha: Thu Apr 04 11:07:35 CEST 2019
+ fecha: Tue Apr 09 10:19:26 CEST 2019
  tipo de documento: DOCUMENTO_CONTABLE
 ****************************************************
-2019-04-04 11:07:35,088 INFO  EadminApplication:60 - Documento creado correctamente
-2019-04-04 11:07:35,089 INFO  EadminApplication:64 - El documento ya existe
-2019-04-04 12:21:21,216 INFO  EadminApplication:18 - iniciando aplicacion
-2019-04-04 12:21:21,216 TRACE EadminApplication:21 - documentoContable creado correctamente
-2019-04-04 12:21:24,287 INFO  EadminApplication:23 - finalizando servicios
-2019-04-04 12:21:24,604 INFO  EadminApplication:64 - El documento ya existe
-2019-04-04 12:21:26,264 INFO  EadminApplication:64 - El documento ya existe
-2019-04-04 12:21:27,002 INFO  EadminApplication:64 - El documento ya existe
-2019-04-04 12:21:27,661 INFO  EadminApplication:64 - El documento ya existe
+2019-04-09 10:19:26,946 INFO  EadminApplication:70 - Documento creado correctamente
+2019-04-09 10:19:46,679 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:19:55,067 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:19:56,305 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:20:45,560 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:20:48,297 INFO  EadminApplication:22 - finalizando servicios
+2019-04-09 10:20:56,124 DEBUG EadminApplication:59 - 
+****************************************************
+ documento creado correctamente
+ id: 1
+ Nombre: nombre 2
+ Usuario: Usuario [id=2, cargo=Usuario2, nombre=cargo2]
+ fecha: Tue Apr 09 10:20:56 CEST 2019
+ tipo de documento: DOCUMENTO_CONTABLE
+****************************************************
+2019-04-09 10:20:56,126 INFO  EadminApplication:70 - Documento creado correctamente
+2019-04-09 10:21:02,876 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:32:22,483 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:32:25,454 INFO  EadminApplication:22 - finalizando servicios
+2019-04-09 10:33:15,571 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:33:55,845 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:33:57,660 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:38:29,179 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:38:31,870 INFO  EadminApplication:22 - finalizando servicios
+2019-04-09 10:39:02,504 INFO  EadminApplication:74 - El documento ya existe
+2019-04-09 10:41:29,105 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:41:36,234 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:41:38,816 INFO  EadminApplication:22 - finalizando servicios
+2019-04-09 10:43:23,066 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:43:25,641 INFO  EadminApplication:22 - finalizando servicios
+2019-04-09 10:43:35,657 INFO  EadminApplication:75 - El documento ya existe
+2019-04-09 10:45:51,945 INFO  EadminApplication:17 - iniciando aplicacion
+2019-04-09 10:45:54,751 INFO  EadminApplication:25 - finalizando servicios
+2019-04-09 10:49:15,787 INFO  EadminApplication:17 - iniciando aplicacion

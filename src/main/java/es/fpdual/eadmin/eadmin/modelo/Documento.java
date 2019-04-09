@@ -12,15 +12,12 @@ public class Documento extends AdministracionElectronicaBase{
 		this.usuario = usuario;
 		this.fecha = fechaCreacion;
 		this.tipoDocumento = tipoDocumento;
-
-	}
-		
+	}		
 
 
 	public TipoDocumento getTipoDocumento() {
 		return tipoDocumento;
-	}	 
-	
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -36,14 +33,10 @@ public class Documento extends AdministracionElectronicaBase{
 		return this.getId();
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Documento [tipoDocumento=" + tipoDocumento + ", id=" + id + ", nombre=" + nombre + ", usuario="
 				+ usuario + ", fecha=" + fecha + "]";
 	}
-	
-
 	
 }
