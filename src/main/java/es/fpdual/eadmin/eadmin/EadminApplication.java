@@ -19,10 +19,13 @@ public class EadminApplication {
 		Documento documento1 = new Documento(1, "dfasdf", null, null, TipoDocumento.DOCUMENTO_CONTABLE);
 		Documento documento2 = new Documento(2, "holaxd", null, null, TipoDocumento.DOCUMENTO_CONTABLE);
 		ToPdf pdf = new ToPdf();
+		
 		pdf.writePDF(documento1);
 		pdf.writePDF(documento2);
 		SpringApplication.run(EadminApplication.class, args);
-		logger.info("finalizando servicios");  
+		logger.info("finalizando servicios");
+		
+		pdf.logPDF();
 		
 		
 		
