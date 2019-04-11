@@ -1,12 +1,12 @@
 package es.fpdual.eadmin.eadmin.modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class AdministracionElectronicaBase {
 	protected int id;
 	protected String nombre;
 	protected Usuario usuario;
-	protected Date fecha;
+	protected LocalDate fecha;
 	
 	
 	public int getId() {
@@ -21,7 +21,7 @@ public abstract class AdministracionElectronicaBase {
 		return usuario;
 	}
 
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}	
 	

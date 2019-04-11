@@ -1,6 +1,8 @@
 package es.fpdual.eadmin.eadmin.modelo;
 
 import static org.junit.Assert.assertTrue;
+
+import java.time.LocalDate;
 import java.util.Date;
 import org.junit.Test;
 
@@ -8,7 +10,7 @@ public class DocumentoTest {
 
 	@Test
 	public void deberiaDevolverTrueSiSonIguales() {
-		final Date fecha = new Date(122584001);
+		final LocalDate fecha = LocalDate.now();
 		final Usuario usuario1 = new Usuario(1, "asdfg", "asdfg");
 		final Documento documento1 = new Documento(1, "dsfg", usuario1, fecha, TipoDocumento.DOCUMENTO_CONTABLE);
 		final Documento documento2 = new Documento(1, "dsfg", usuario1, fecha, TipoDocumento.DOCUMENTO_CONTABLE);
@@ -20,7 +22,7 @@ public class DocumentoTest {
 
 	@Test
 	public void deberiaCalcularHashCode() {
-		final Date fecha = new Date(122584001);
+		final LocalDate fecha = LocalDate.now();
 		final Usuario usuario1 = new Usuario(1, "asdfg", "asdfg");
 		final Documento documento1 = new Documento(1, "dsfg", usuario1, fecha, TipoDocumento.DOCUMENTO_CONTABLE);
 

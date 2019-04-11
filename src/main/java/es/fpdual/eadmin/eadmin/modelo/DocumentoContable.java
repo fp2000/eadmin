@@ -1,5 +1,6 @@
 package es.fpdual.eadmin.eadmin.modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -13,7 +14,7 @@ public class DocumentoContable extends Documento{
 	private static Logger logger = LogManager.getLogger(EadminApplication.class);
 
 
-	public DocumentoContable(int id, String nombre, Usuario usuario, Date fechaCreacion,
+	public DocumentoContable(int id, String nombre, Usuario usuario, LocalDate fechaCreacion,
 			String numeroOperacionContable) {
 		super(id, nombre, usuario, fechaCreacion, TipoDocumento.DOCUMENTO_CONTABLE);
 		this.numeroOperacionContable = numeroOperacionContable;

@@ -1,5 +1,6 @@
 package es.fpdual.eadmin.eadmin.servicio;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class ServicioDocumentoImpl implements ServicioDocumento{
 	@Override
 	public Documento altaDocumento(Documento documento) {
 		final int siguienteId = repositorioDocumento.getSiguiente();
-		final Date fechaActual = new Date();
+		final LocalDate fechaActual = LocalDate.now();
 		
 		Documento documentoModificado = new Documento(siguienteId, documento.getNombre(), documento.getUsuario(), fechaActual, documento.getTipoDocumento());
 		

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.junit.Test;
 public class ExpedienteTest {
 	@Test
 	public void deberiaDevolverTrueSiSonIguales() {
-		final Date fecha = new Date(122584001);
+		final LocalDate fecha = LocalDate.now();
 		final Usuario usuario1 = new Usuario(1, "asdflg", "asdfg");
 		final Expediente expediente1 = new Expediente(1, "dsfg", usuario1, fecha, TipoExpediente.EXPEDIENTE_NOMINAS, null);
 		final Expediente expediente2 = new Expediente(1, "dsfg", usuario1, fecha, TipoExpediente.EXPEDIENTE_NOMINAS, null);
@@ -26,7 +27,7 @@ public class ExpedienteTest {
 
 	@Test
 	public void deberiaCalcularHashCode() {
-		final Date fecha = new Date(122584001);
+		final LocalDate fecha = LocalDate.now();
 		final Usuario usuario1 = new Usuario(1, "asdfg", "asdfg");
 		final Expediente expediente1 = new Expediente(1, "dsfg", usuario1, fecha, TipoExpediente.EXPEDIENTE_NOMINAS, null);
 		
@@ -36,7 +37,7 @@ public class ExpedienteTest {
 	
 	@Test
 	public void deberiaDevolverFalseSiSonDiferentes() {
-		final Date fecha = new Date(122584001);
+		final LocalDate fecha = LocalDate.now();
 		final Usuario usuario1 = new Usuario(1, "asdfg", "asdfg");
 		final Expediente expediente1 = new Expediente(1, "dsfg", usuario1, fecha, TipoExpediente.EXPEDIENTE_SUBVENCIONES, null);
 		final Expediente expediente2 = new Expediente(2, "dsfg", usuario1, fecha, TipoExpediente.EXPEDIENTE_NOMINAS, null);
@@ -50,16 +51,16 @@ public class ExpedienteTest {
 	@Test
 	public void deberiaConstruirUnExpedienteConDocumentos() {				
 		final Usuario usuario1 = new Usuario(1, "asdflg", "asdfg");	
-		final Documento documento1 = new Documento(1, "dsfg", usuario1, new Date(), TipoDocumento.DOCUMENTO_CONTABLE);
-		final Documento documento2 = new Documento(1, "dsfg", usuario1, new Date(), TipoDocumento.DOCUMENTO_CONTABLE);
-		final Documento documento3 = new Documento(3, "dsfg", usuario1, new Date(), TipoDocumento.DOCUMENTO_PADRON);
+		final Documento documento1 = new Documento(1, "dsfg", usuario1, LocalDate.now(), TipoDocumento.DOCUMENTO_CONTABLE);
+		final Documento documento2 = new Documento(1, "dsfg", usuario1, LocalDate.now(), TipoDocumento.DOCUMENTO_CONTABLE);
+		final Documento documento3 = new Documento(3, "dsfg", usuario1, LocalDate.now(), TipoDocumento.DOCUMENTO_PADRON);
 		
 		final List<Documento> documentos = new ArrayList<Documento>();
 		documentos.add(documento1);
 		documentos.add(documento2);
 		documentos.add(documento3);
 
-		final Expediente expediente = new Expediente(1, "dsfg", usuario1, new Date(), TipoExpediente.EXPEDIENTE_NOMINAS, documentos);
+		final Expediente expediente = new Expediente(1, "dsfg", usuario1, LocalDate.now(), TipoExpediente.EXPEDIENTE_NOMINAS, documentos);
 		
 		assertEquals(documentos, expediente.getDocumentos());
 		assertTrue(expediente.getDocumentos().contains(documento1));
@@ -96,16 +97,16 @@ public class ExpedienteTest {
 	@Test
 	public boolean deberiaObtenerLongitudNombresDocumentos() {
 		final Usuario usuario1 = new Usuario(1, "asdflg", "asdfg");	
-		final Documento documento1 = new Documento(1, "dsfg", usuario1, new Date(), TipoDocumento.DOCUMENTO_CONTABLE);
-		final Documento documento2 = new Documento(1, "dsfg", usuario1, new Date(), TipoDocumento.DOCUMENTO_CONTABLE);
-		final Documento documento3 = new Documento(3, "dsfg", usuario1, new Date(), TipoDocumento.DOCUMENTO_PADRON);
+		final Documento documento1 = new Documento(1, "dsfg", usuario1, LocalDate.now(), TipoDocumento.DOCUMENTO_CONTABLE);
+		final Documento documento2 = new Documento(1, "dsfg", usuario1, LocalDate.now(), TipoDocumento.DOCUMENTO_CONTABLE);
+		final Documento documento3 = new Documento(3, "dsfg", usuario1, LocalDate.now(), TipoDocumento.DOCUMENTO_PADRON);
 		
 		final List<Documento> documentos = new ArrayList<Documento>();
 		documentos.add(documento1);
 		documentos.add(documento2);
 		documentos.add(documento3);
 
-		final Expediente expediente = new Expediente(1, "dsfg", usuario1, new Date(), TipoExpediente.EXPEDIENTE_NOMINAS, documentos);
+		final Expediente expediente = new Expediente(1, "dsfg", usuario1, LocalDate.now(), TipoExpediente.EXPEDIENTE_NOMINAS, documentos);
 		
 		final List<Integer> resultado = expediente.obtenerLongitudNombresDocumentos();
 		assertEquals(2, resultado.size());
