@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="es.fpdual.eadmin.eadmin.mapper.DocumentoMapper">
 	<insert id="insertarDocumento">
-	        INSERT INTO DOCUMENTO (
+	        INSERT INTO EAD_DOC (
 	            DOC_ID,
 	            DOC_NOM,
 	            DOC_USU,
@@ -11,11 +11,46 @@
 	        ) VALUES (
 	            #{documento.id}, /*DOC_ID,*/
 	            #{documento.nombre}, /*DOC_NOM,*/
-	            #{documento.usuario}, /*DOC_USU,*/
+	            #{documento.usuario.id}, /*DOC_USU,*/
 	            #{documento.fechaCreacion}, /*DOC_FEC,*/
-	            #{documento.tipoDocumento}
+	            #{documento.tipoDocumento} /*DOC_TIP*/
 	        )        
 	    </insert>
-	
+		
+		<select id="getDocumento" resultMap="documentoResultMap">
+			SELECT DOC_ID,
+				DOC_NOM,
+				DOC_USU,
+				DOC_FEC,
+				DOC_TIP
+			FROM EAD_DOC
+			WHERE DOC_ID=#{id}
+		</select>
+		
+		<resultMap type="es.fpdual.eadmin.eadmin.modelo.Documento" id="documentoResultMap">
+			<constructor>
+				<idArg column="DOC_ID" javaType="integer"/>
+				<arg column="DOC_NOM" javaType="string"/>
+				<arg column="DOC_USU" javaType="es.fpdual.eadmin.eadmin.modelo.Usuario" resultMap="usuarioResultMap"/>
+				<arg column="DOC_FEC" javaType="java.time.LocalDate"/>
+				<arg column="DOC_TIP" javaType="es.fpdual.eadmin.eadmin.modelo.TipoDocumento"/>				
+			</constructor>
+		</resultMap>		
+		
+		<resultMap type="es.fpdual.eadmin.eadmin.modelo.Usuario" id="usuarioResultMap">
+			<constructor>
+				<idArg column="DOC_USU" javaType="integer"/>				
+			</constructor>
+		</resultMap>
+		
+		<update id="actualizarDocumento">
+			UPDATE EAD_DOC SET
+				DOC_NOM = #{documento.nombre},
+				DOC_TIP = #{documento.tipoDocumento}
+			WHERE DOC_ID = #{documento.id}
+				
+		</update>
+		
+		
 	
 </mapper> 

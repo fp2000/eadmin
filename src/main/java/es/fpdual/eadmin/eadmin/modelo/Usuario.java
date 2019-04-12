@@ -4,18 +4,23 @@ public class Usuario {
 	private final int id;
 	private final String cargo;
 	private final String nombre;
-	
+
 	public Usuario(int id, String cargo, String nombre) {
 		super();
 		this.id = id;
 		this.cargo = cargo;
 		this.nombre = nombre;
 	}
-	
+
+	@SuppressWarnings("unused")
+	private Usuario(Integer id) { // NOSONAR myBatis
+		this(id, null, null);
+	}
+
 	public int getId() {
 		return id;
-	}	
-	
+	}
+
 	public String getCargo() {
 		return cargo;
 	}
@@ -28,11 +33,11 @@ public class Usuario {
 	public boolean equals(Object obj) {
 		if (obj instanceof Usuario) {
 			final Usuario usuario = (Usuario) obj;
-			return this.getId() == usuario.getId(); 
+			return this.getId() == usuario.getId();
 		}
 		return false;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return this.getId();
@@ -42,6 +47,5 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [id=" + id + ", cargo=" + cargo + ", nombre=" + nombre + "]";
 	}
-	
-	
+
 }

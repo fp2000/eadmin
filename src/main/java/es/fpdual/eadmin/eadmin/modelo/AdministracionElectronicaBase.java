@@ -6,9 +6,8 @@ public abstract class AdministracionElectronicaBase {
 	protected int id;
 	protected String nombre;
 	protected Usuario usuario;
-	protected LocalDate fecha;
-	
-	
+	protected LocalDate fechaCreacion;
+
 	public int getId() {
 		return id;
 	}
@@ -21,9 +20,8 @@ public abstract class AdministracionElectronicaBase {
 		return usuario;
 	}
 
-	public LocalDate getFecha() {
-		return fecha;
-	}	
-	
-	
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
+	}
+
 }
