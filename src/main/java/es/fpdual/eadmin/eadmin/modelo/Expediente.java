@@ -5,6 +5,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+@ToString
+@EqualsAndHashCode(callSuper = false)
+@Getter
 public class Expediente extends AdministracionElectronicaBase {
 	private final TipoExpediente tipoExpediente;
 	private final List<Documento> documentos;
@@ -17,14 +24,6 @@ public class Expediente extends AdministracionElectronicaBase {
 		this.fechaCreacion = fechaCreacion;
 		this.tipoExpediente = tipoExpediente;
 		this.documentos = documentos;
-	}
-
-	public TipoExpediente getTipoExpediente() {
-		return tipoExpediente;
-	}
-
-	public List<Documento> getDocumentos() {
-		return this.documentos;
 	}
 
 	public boolean esDocumentoContable(Documento documento) {
@@ -43,20 +42,6 @@ public class Expediente extends AdministracionElectronicaBase {
 
 	public Map<TipoDocumento, List<Documento>> obtenerDocumentosPorTipos() {
 		return documentos.stream().collect(Collectors.groupingBy(Documento::getTipoDocumento));
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Expediente) {
-			Expediente expediente = (Expediente) obj;
-			return this.getId() == expediente.getId();
-		}
-		return false;
-	}
-
-	@Override
-	public int hashCode() {
-		return this.getId();
 	}
 
 }
